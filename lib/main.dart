@@ -1,41 +1,56 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Center(
+            // Centrar el título
+            child: Text(
+              'Gael Sebastian Rojas Mata 22308051281303', // Título de la AppBar
+              style: TextStyle(
+                color: Color(0xffffffff), // Color azul marino
+                fontSize: 15, // Tamaño más grande
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          backgroundColor: Color(0xff75a4c8), // Fondo azul para el AppBar
+        ),
+        body: Center(
+          child: Container(
+            width: 170,
+            height: 100,
+            decoration: BoxDecoration(
+              color: Color(0xffbce1ff), // Color azul del contenedor
+              borderRadius: BorderRadius.circular(20), // Esquinas redondeadas
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.blue.shade700.withOpacity(1), // Sombra verde
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                  offset: Offset(4, 4), // Sombra hacia abajo y a la derecha
+                ),
+              ],
+            ),
+            child: Center(
+              child: Text(
+                'I am a container', // Texto dentro del contenedor
+                style: TextStyle(
+                  color: Color(0xff135979), // Color del texto
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );
